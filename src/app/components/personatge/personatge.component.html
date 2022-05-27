@@ -1,0 +1,23 @@
+
+<h1> {{personatge.nombre | uppercase}}  <small> {{personatge.aparicion}}</small></h1>
+<hr>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <img [src]="personatge.img" [alt]="personatge.nombre">
+        <br><br>
+    </div>
+
+    <div class="col-md-12">
+        <h3>{{personatge.nombre}}</h3>
+        <hr>
+        <p>
+            {{personatge.bio}}
+        </p>
+
+    </div>
+    <a [routerLink]= "['/personatges']" class="btn btn-outline-danger btn-block">Tornar</a>
+
+</div>
+

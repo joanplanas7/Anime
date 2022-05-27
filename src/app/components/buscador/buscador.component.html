@@ -1,0 +1,28 @@
+<h1>
+    Buscador: <small>{{termino}}</small></h1>
+
+<div class="row" *ngIf="personatges.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existeix cap resultat amb aquesta busqueda. 
+        </div>
+
+    </div>
+</div>
+<div class="card-columns">
+
+
+    <div class="card animated fadeIn fast" *ngFor="let personatge of personatges; let i = index ">
+        <img src="{{personatge.img}}" class="card-img-top" [alt]="personatge.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{personatge.nombre}}</h5>
+            <p class="card-text">{{personatge.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{personatge.aparicion}}</small></p>
+
+            <button (click)="veurePersonatge(personatge.idx)" type="button" class="btn btn-outline-primary btn-block">Veure'n més...</button>
+
+            <!--<a [routerLink] ="['/personatge',i]"  class="btn btn-outline-primary">Veure'n més</a>
+                -->
+        </div>
+    </div>
+</div>
